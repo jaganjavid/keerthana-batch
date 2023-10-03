@@ -1,0 +1,307 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    max-width: 1140px;
+    margin: 0px auto;
+    padding: 0px 15px;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+main{
+    background: url("./img//bg.png") no-repeat center;
+    background-size: cover;
+    /* background-color: blue; */
+}
+
+.section-heading{
+    text-align: center;
+    margin-bottom:40px;
+}
+
+.section-heading h2{
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.section-heading p{
+    max-width: 50%;
+    margin: 0px auto;
+}
+
+.section-heading h2 span{
+    display: block;
+}
+
+
+.clients,
+.solutions,
+.social-media,
+.happy-client{
+    padding: 80px 0px;
+}
+
+/* Header Section Starts */
+
+header{
+    padding: 20px 0px;
+}
+
+.header-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+}
+
+.header-wrapper ul{
+    display: flex;
+    gap: 20px;
+}
+
+.header-wrapper ul li a{
+    color: #ffffff;
+}
+
+/* Banner Section Starts */
+
+.banner-wrapper{
+    text-align: center;
+    padding: 130px 0px;
+    color: #ffffff;
+}
+
+.banner h1{
+    font-size: 94px;
+    margin-bottom: 25px;
+}
+
+.banner p{
+    margin-bottom: 50px !important;
+    max-width: 50%;
+    margin: 0px auto;
+}
+
+.banner h1 span{
+    display: block;
+}
+
+.banner a{
+    padding: 10px 25px;
+    background-color: #231A36;
+    color: #ffffff;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+
+/* Clents Section Start */
+
+.clients h4{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.clients-logos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.clients-logos div{
+    width: 115px;
+}
+
+.clients-logos div img{
+    width: 100%;
+}
+/* Clents Section End */
+
+/* Solutions Start */
+.solutions{
+    background-color: #F0F0F0;
+}
+
+.solution-wrapper{
+    max-width: 800px;
+    margin: 0px auto;
+}
+
+.solution-box{
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.solution-box div{
+    width: 50%;
+}
+
+.solution-box>div:last-child{
+    text-align: right;
+}
+
+.solution-box span{
+    text-transform: uppercase;
+    color: #B33CDB;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.solution-box h3{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.solution-box p{
+    margin: 15px 0px 15px 0px;
+}
+
+.solution-box a{
+    color: gray;
+}
+
+.solution-wrapper>div:nth-child(2){
+    flex-direction: row-reverse;
+}
+
+.solution-wrapper>div:nth-child(2)>div:last-child{
+    text-align: left;
+}
+/* Solutions End */
+
+/* Social Media Start */
+
+.social-media{
+    background-color: #231A36;
+    color: #ffffff;
+}
+
+.social-media .section-heading p{
+    max-width: 50%;
+}
+
+.sm-wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.sm-wrapper h2{
+    font-size: 40px;
+}
+
+.sm-wrapper span {
+    font-size: 14px;
+    color: #7B9292;
+}
+/* Social Media End */
+
+/* Happy Client Start  */
+.hc-wrapper{
+    display: flex;
+    align-items: center;
+}
+
+.hc-wrapper p{
+    /* width: %; */
+    font-style: italic;
+    font-size: 22px;
+    margin-bottom: 60px;
+    color: #6D6D6D;
+}
+
+.hc-wrapper>div{
+    width: 50%;
+}
+
+.hc-wrapper>div:last-child{
+    text-align: right;
+}
+/* Happy Client End */
+
+/* Footer Start */
+footer{
+    padding: 25px;
+}
+.footer-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-wrapper ul{
+    display: flex;
+    gap: 25px;
+}
+
+.footer-wrapper>div:last-child{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+/* Footer End */
+
+
+@media only screen and (max-width: 992px) {
+    .solution-box{
+        flex-direction: column !important;
+    }
+
+    .solution-box>div:first-child{
+        text-align: center !important;
+    }
+
+    .solution-box>div:last-child{
+        text-align: center !important;
+        margin-top: 50px;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .header-wrapper{
+        display: block;
+        text-align: center;
+    }
+
+    .header-wrapper ul{
+        justify-content: center;
+    }
+
+    .banner-wrapper{
+        padding: 30px 0px;
+    }
+    .banner h1{
+      font-size: 40px;
+    }
+
+    .clients-logos{
+        gap: 35px;
+    }
+
+    .clients-logos>div{
+        width: 45%;
+       flex-direction: column;
+       text-align: center;
+    }
+
+    .clients-logos>div img{
+       width: 100px;
+    }
+}
