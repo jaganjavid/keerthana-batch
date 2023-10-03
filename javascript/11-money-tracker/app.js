@@ -70,6 +70,24 @@ const ItemCtrl = (function () {
 
             return total;
 
+        },
+        getItemById: function(id){
+            let found = null;
+
+            // Loop through items
+            data.items.forEach(function(item){
+                if(item.id === id){
+                    found = item;
+                }
+            })
+
+            return found;
+        },
+        setCurrentItem: function(editableItem){
+            data.currentItem = editableItem;
+        },
+        getCurrentItem: function(){
+            return data.currentItem;
         }
     }
 })()
@@ -80,7 +98,7 @@ const UICtrl = (function () {
             let html = "";
 
             items.forEach(function (item) {
-                html += `<li class="collection-item" id=${item.id}>
+                html += `<li class="collection-item" id="item-${item.id}">
              <strong>${item.name} : <em>${item.money}$</em></strong>
              <a href="#" class="secondary-content edit-item">
                  <i class="fa fa-pencil"></i>
@@ -135,6 +153,10 @@ const UICtrl = (function () {
         clearInputState: function () {
             document.querySelector("#item-name").value = "";
             document.querySelector("#item-money").value = "";
+        },
+        addItemToForm: function(){
+            document.querySelector("#item-name").value = ItemCtrl.getCurrentItem().name;
+            document.querySelector("#item-money").value = ItemCtrl.getCurrentItem().money;
         }
     }
 })()
@@ -191,6 +213,24 @@ const App = (function (ItemCtrl, UICtrl, StorageCtrl) {
             // Show three button
 
             UICtrl.showEditState();
+
+            // i > a > li - id
+            const listId = e.target.parentElement.parentElement.id;
+
+            // Break into array
+            const listArr = listId.split("-");
+
+            // Get the actual id
+            const id = parseInt(listArr[1]);
+
+             //  Get the Item
+             const itemToEdit = ItemCtrl.getItemById(id);
+
+            //  Set Current Item
+            ItemCtrl.setCurrentItem(itemToEdit);
+
+            // Add item to form
+            UICtrl.addItemToForm();
         }
     }
 
@@ -204,7 +244,9 @@ const App = (function (ItemCtrl, UICtrl, StorageCtrl) {
             if (items.length > 0) {
                 UICtrl.populateItemList(items);
 
-                ItemCtrl.getTotalMoney();
+                const totalMoney =  ItemCtrl.getTotalMoney();
+
+                UICtrl.showTotalMoney(totalMoney);
             } else {
                 console.log("No item Added")
             }
@@ -215,6 +257,7 @@ const App = (function (ItemCtrl, UICtrl, StorageCtrl) {
 })(ItemCtrl, UICtrl, StorageCtrl);
 
 App.init();
+
 
 
 
