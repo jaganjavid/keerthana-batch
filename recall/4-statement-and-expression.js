@@ -12,7 +12,7 @@ greet();
 
 // Assing them to var
 
-anonymousGreet();
+// anonymousGreet();
 
 var anonymousGreet = function(){
     console.log("Hello")

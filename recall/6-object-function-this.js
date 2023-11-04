@@ -8,10 +8,37 @@ function a(){
     console.log(b);
 
     this.newVariable = "Hello"; // its point to the window
+
 }
 
 a();
 
-console.log(window);
+// Function Expression
 
-console.log(newVariable);
+var b = function(){
+    console.log("Exp", this)
+}
+
+b();
+
+var c = {
+    name: "The C Object",
+    log: function(){
+        
+        this.name = "Updated C Object";
+
+        var self = this;
+
+        let setName = function(newName){
+            self.name = newName;
+        }
+
+        setName("Updated again , The c Object");
+     
+    }
+}
+
+c.log();
+
+console.log(c.name);
+
