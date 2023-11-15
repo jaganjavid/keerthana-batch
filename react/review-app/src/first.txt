@@ -1,0 +1,44 @@
+import React from "react"
+
+const App = () => {
+
+  const title = "Blog Post";
+  const body = "This is my blog post";
+  const comments = [
+    {id: 1, text: "comment One"},
+    {id: 2, text: "comment Two"},
+    {id: 3, text: "comment Three"},
+  ]
+
+
+  const loading = false;
+
+  const showComments = false;
+
+  if(loading) return <h2>Loading...</h2>
+   
+  return (
+    <div className="container">
+      <h1>My App</h1>
+
+      <h2>{title}</h2>
+      <p>{body}</p>
+      <p>{5 + 5}</p>
+      <p>{Math.random() * (5 + 5)}</p>
+
+      <p>{showComments ? "Yes" : "No"}</p>
+
+      {showComments && (<div className="commnets">
+        <h3>Comments ({comments.length})</h3>
+
+        <ul>
+          {comments.map((comment) => (
+            <li key={comment.id}>{comment.text}</li>
+          ))}
+        </ul>
+      </div>)}
+    </div>
+  )
+}
+
+export default App

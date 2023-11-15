@@ -1,11 +1,17 @@
-import Header from "./components/Header";
+import React from "react"
+import Header from "./components/Header"
 
-function App() {
+const App = () => {
+
+    
   return (
     <>
-     <Header text={"App"}/>
+      <h1>App</h1>
+
+      <Header text="My App"/>
+      
     </>
-  );
+  )
 }
 
-export default App;
+export default App
