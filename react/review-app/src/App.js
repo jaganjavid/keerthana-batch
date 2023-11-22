@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import Header from "./components/Header"
 import FeedbackList from "./components/FeedbackList"
+import FeedbackStats from "./components/FeedbackStats"
+
 
 const App = () => {
 
@@ -24,6 +26,8 @@ const App = () => {
 
   ])
 
+
+
   const deleteFeedback = (id) => {
     if(window.confirm("Are you sure?")){
       setFeedBack(feedback.filter((item) => {
@@ -37,6 +41,7 @@ const App = () => {
     <>
       <Header/>
       <div className="container">
+        <FeedbackStats feedback={feedback}/>
         <FeedbackList feedback={feedback} handleDelete={deleteFeedback}/>
       </div>
     </>

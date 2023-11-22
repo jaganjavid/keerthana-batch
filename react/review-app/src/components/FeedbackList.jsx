@@ -7,7 +7,7 @@ import FeedbackItem from "./FeedbackItem"
 const FeedbackList = ({feedback, handleDelete}) => {
 
     if(!feedback || feedback.length === 0){
-        return <p>No Feedback Yet</p>
+        return <p>No Feedback Yet Added</p>
     }
 
    
