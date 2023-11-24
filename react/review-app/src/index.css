@@ -163,6 +163,7 @@ input:focus {
   background: #ff6a95;
 }
 
+
 .btn:hover {
   transform: scale(0.98);
   opacity: 0.9;
