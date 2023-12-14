@@ -4,6 +4,7 @@ import FeedbackList from "./components/FeedbackList"
 import FeedbackStats from "./components/FeedbackStats"
 import FeedbackForm from "./components/FeedbackForm"
 import { FeedbackProvider } from "./context/FeedbackContext";
+import { UserProvider } from "./context/UserContext";
 
 const App = () => {
 
@@ -31,13 +32,15 @@ const App = () => {
     
   return (
 
-    <FeedbackProvider>   
-      <Header/>
-      <div className="container">
-        <FeedbackForm/>
-        <FeedbackStats/>
-        <FeedbackList/>
-      </div>
+    <FeedbackProvider>  
+      <UserProvider> 
+        <Header/>
+        <div className="container">
+          <FeedbackForm/>
+          <FeedbackStats/>
+          <FeedbackList/>
+        </div>
+      </UserProvider>
     </FeedbackProvider>
   )
 }
